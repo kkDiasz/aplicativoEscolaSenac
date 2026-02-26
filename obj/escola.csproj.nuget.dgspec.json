@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\GiovanniRodriguesdeL\\escola\\escola.csproj": {}
+    "C:\\Users\\CarlosJosedaSilvaDia\\Desktop\\aula05\\aplicativoEscolaSenac\\escola.csproj": {}
   },
   "projects": {
-    "C:\\Users\\GiovanniRodriguesdeL\\escola\\escola.csproj": {
+    "C:\\Users\\CarlosJosedaSilvaDia\\Desktop\\aula05\\aplicativoEscolaSenac\\escola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\GiovanniRodriguesdeL\\escola\\escola.csproj",
+        "projectUniqueName": "C:\\Users\\CarlosJosedaSilvaDia\\Desktop\\aula05\\aplicativoEscolaSenac\\escola.csproj",
         "projectName": "escola",
-        "projectPath": "C:\\Users\\GiovanniRodriguesdeL\\escola\\escola.csproj",
-        "packagesPath": "C:\\Users\\GiovanniRodriguesdeL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\GiovanniRodriguesdeL\\escola\\obj\\",
+        "projectPath": "C:\\Users\\CarlosJosedaSilvaDia\\Desktop\\aula05\\aplicativoEscolaSenac\\escola.csproj",
+        "packagesPath": "C:\\Users\\CarlosJosedaSilvaDia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CarlosJosedaSilvaDia\\Desktop\\aula05\\aplicativoEscolaSenac\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\GiovanniRodriguesdeL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\CarlosJosedaSilvaDia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

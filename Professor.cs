@@ -33,7 +33,7 @@ public class Professor
     }
 
     public void Menu(){
-        
+ 
     }
     public bool Login(List <Professor> listaProfessores)
     {
@@ -60,6 +60,8 @@ public class Professor
             Console.WriteLine($"Você ainda tem {tentativas} tentativas");
 
         }while(tentativas!=0);
+
+        Console.WriteLine("Número de tentativas de login excedida! Retornando ao menu...");
 
         return false;
         
