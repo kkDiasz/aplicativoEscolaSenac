@@ -11,6 +11,20 @@ public class Professor
     private string? login;
     private string? senha;
 
+    public static void listarProf(List<Professor> listarProf)
+    {
+        Console.WriteLine("============== PROFESSORES CADASTRADOS ==============");
+        if(listarProf.Count == 0)
+        {
+            Console.WriteLine("Não há professores cadastrados no sistema.");
+            return;
+        }foreach (var professor in listarProf)
+        {
+            Console.WriteLine("nome: "+professor.nome);
+            Console.WriteLine("data de nascimento: "+professor.dataNascimento);
+
+        }
+    }
 
     public Professor CadastrarProfessor(Professor professorCadastro)
     {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using System.Reflection.Metadata.Ecma335;
 
 namespace escola; //school;
@@ -10,19 +11,19 @@ public class Program
         // tipo nomeDaVariavel;
         float nota1, nota2, nota3, media;
         string opcao;      
-        bool estaLogado = false;  
+        bool estaLogado = false; 
+        bool fecharMenu = false;
         Professor professorAtual = new Professor();
-
-        do{
         List <Professor> listaProfessores = new List<Professor>();
 
-
+        do{
         int opcaoMenu;
-        Console.WriteLine("========TELA DE LOGIN========");
+        Console.WriteLine("\n========TELA DE LOGIN========");
         Console.WriteLine("1 - Cadastrar Professor");
         Console.WriteLine("2 - Fazer Login");
         // Console.WriteLine("3 - Calcular Media do aluno");
-        Console.WriteLine("3 - Fechar programa");
+        Console.WriteLine("3 - Listar professores");
+        Console.WriteLine("4 - Fechar programa\n");
         Console.WriteLine("Digite uma das opções acima: ");
         opcaoMenu = int.Parse(Console.ReadLine()?? "");
 
@@ -31,30 +32,35 @@ public class Program
             case 1:
                 professorAtual.CadastrarProfessor(professorAtual);
                 listaProfessores.Add(professorAtual);
-
+                professorAtual = new Professor();
                 break;
+
             case 2:
                 estaLogado = professorAtual.Login(listaProfessores);
                 break;
 
             case 3:
+                Professor.listarProf(listaProfessores);
+                break;
+
+            case 4:
                 estaLogado = false;
+                fecharMenu = true;
                 break;
 
             default:
-                Console.WriteLine("Digite um número entre 1 e 3, de acordo com a opção desejada.");
+                Console.WriteLine("\nDigite um número entre 1 e 3, de acordo com a opção desejada.\n");
                 opcaoMenu = int.Parse(Console.ReadLine()?? "");
                 break;
-
         }
-        }while(estaLogado == false);
+        }while(estaLogado == false && fecharMenu==false);
 
         if(estaLogado == true){
             do{
             
-            Console.WriteLine("Bem-Vindo Professor(a) " + professorAtual.nome);
+            Console.WriteLine("\nBem-Vindo Professor(a) " + professorAtual.nome);
             
-            Console.WriteLine("Digite a nota 1 do aluno: ");
+            Console.WriteLine("\nDigite a nota 1 do aluno: ");
             nota1 = float.Parse(Console.ReadLine() ?? "");
             Console.WriteLine("Digite a nota 2 do aluno: ");
             nota2 = float.Parse(Console.ReadLine() ?? "");
@@ -63,31 +69,32 @@ public class Program
 
             media = (nota1+nota2+nota3)/3;
 
-            Console.WriteLine("A média do aluno é: " + media.ToString("F2"));
+            Console.WriteLine("\nA média do aluno é: " + media.ToString("F2"));
             //Console.WriteLine($"A média do aluno é: {media}");
             //Se a media for maior ou igual a 7 = APROVADO, se a media for menor que 7 
             // e maior ou igual a 3 = RECUPERAÇÃO, menor que 3 = REPROVADO
 
             if (media >= 7)
             {
-                Console.WriteLine("Você está APROVADO!");
+                Console.WriteLine("\nVocê está APROVADO!");
             }
 
             else if (media < 7 && media>=3)
             {
-                Console.WriteLine("Você está em RECUPERAÇÃO.");
+                Console.WriteLine("\nVocê está em RECUPERAÇÃO.");
             }
             else
             {
-                Console.WriteLine("Você está REPROVADO!");
+                Console.WriteLine("\nVocê está REPROVADO!");
             }
 
-            Console.WriteLine("Deseja calcular a média de outro aluno?");
+            Console.WriteLine("\nDeseja calcular a média de outro aluno?");
             Console.WriteLine("Digite 's' para sim e 'n' para não");
             opcao = Console.ReadLine() ?? "";
             }while(opcao=="s" || opcao=="S");
         }
         
-        Console.WriteLine("Não pode acessar a área do aluno. Faça seu login novamente!");
+        Console.WriteLine("Programa finalizado.");
+
     }
 }
